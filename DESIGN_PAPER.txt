@@ -1,0 +1,83 @@
+Name: Aron Hampersberger
+
+--------------------
+--- Coin Tracker ---
+--------------------
+
+short description:
+app to manage crypto currency holdings
+
+motivation:
+for owners of different crypto currencies it is a lot of effort to keep track
+of the current value of their holdings and how much they are worth in fiat currency
+
+solution:
+- offer a way to add currency holdings and if possible refresh them automatically on changes
+- offer a way to calculate values for each currency and for the overall holdings
+
+-----------------
+--- use cases ---
+-----------------
+
+create balance:
+choose a currency and enter the balance amount or a wallet adress
+the input data is stored in a database
+
+view balances:
+shows all balances that were created with the respective dollar/euro value including an overall sum (through the use of various APIs)
+
+select fiat currency:
+set the output currency to one of the supported fiat currencies (dollar/euro)
+
+select fiat exchange:
+select a balance and an exchange to be used for calculating fiat values (a default exchange is always selected)
+
+select crypto exchange:
+select a balance and exchange to be used for calculating btc values (a default exchange is always selected)
+
+----------------------------
+--- software description ---
+----------------------------
+
+programming language: python3 with django 1.7 (dev release)
+database: postgresql
+
+- design a database layout that offers all the required options
+tables:
+api -- available apis with urls and linked to an exchange
+balance -- the users balances
+currency -- all available currencies
+currency_pair -- links the currencies to tradeable pair
+exchange -- exchanges linked to currencies and apis
+userdata -- global data about the user
+
+from the above tables only balance and userdata are ment to be modified by the user.
+the other tables can be filled from the django admin interface and are provided with initial data.
+this way an admin can easily react to changes to api urls, add currencies etc.
+and the user simply works with what is available
+
+- create/configure a django project
+the project "coin_tracker" is created and hosts the balance manager app.
+the project can be expanded by other useful related apps in future updates.
+
+- creating jango models
+implement the django models for the database design. the models contain the logic behind
+the balance manager apps. it contains classes for each database and functions needed
+to provide the desired functions.
+
+- provide initial data to the django models/database
+after completing the models, data can be added to the database through either
+the django admin interface or e.g. a .json file that represents the model structure.
+
+- implement the views used for the user interface
+a view is created for every defined use case
+
+- create url mapping for the created views
+contains the url mapping and additional information for templates
+
+- create html templates
+a template is created for every view to optimize user experience
+
+
+more details are provided in the source documentation.
+the application is tested with the django test suite.

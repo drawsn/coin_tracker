@@ -18,7 +18,7 @@ TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'u)8odjy8k%ny+__ld&nfk8a6sq2j*_u#84wcr8@fz+tz(z15a-'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -59,10 +59,10 @@ WSGI_APPLICATION = 'coin_tracker.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'coin_tracker',
-        'USER': 'admin',
-        'PASSWORD': 'draw11draw',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'coin_tracker', #add the db name
+        'USER': '', #postgresql username
+        'PASSWORD': '', #postgresql password
         'HOST': 'localhost',
         'PORT': '',
     }
