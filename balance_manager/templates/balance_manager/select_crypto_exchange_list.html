@@ -1,0 +1,14 @@
+<h1>choose balance you want to set an exchange for</h1>
+
+{% if balance_list %}
+    <ul>
+    {% for balance in balance_list %}
+        <li><a href="{% url 'balance_manager:select_crypto_exchange' balance.pk %}">{{ balance.currency.currency_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No balances are available.</p>
+{% endif %}
+
+<br/>
+<a href="{% url 'balance_manager:index' %}">< index<a/>

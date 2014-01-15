@@ -1,0 +1,17 @@
+<h1>create balance</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'balance_manager:create_balance' %}" method="post">
+{% csrf_token %}
+amount: <input type="text" name="amount" id="amount" /><br/><br/>
+wallet adress: <input type="text" name="wallet" id="wallet" /><br/><br/>
+{% for currency in currency_list %}
+    <input type="radio" name="currency" id="currency{{ forloop.counter }}" value="{{ currency.id }}" />
+    <label for="currency{{ forloop.counter }}">{{ currency.currency_name }}</label><br />
+{% endfor %}
+<br/>
+<input type="submit" value="create balance" />
+
+<br/><br/><br/>
+<a href="{% url 'balance_manager:index' %}">< index<a/>

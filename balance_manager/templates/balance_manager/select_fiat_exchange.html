@@ -1,0 +1,17 @@
+<h1>select fiat exchange</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+currently used exchange: {{ used_exchange }}
+<br/><br/>
+<form action="{% url 'balance_manager:select_fiat_exchange' %}" method="post">
+{% csrf_token %}
+{% for exchange in exchange_list %}
+    <input type="radio" name="exchange" id="exchange{{ forloop.counter }}" value="{{ exchange.exchange_id }}" />
+    <label for="exchange{{ forloop.counter }}">{{ exchange.exchange_name }}</label><br />
+{% endfor %}
+<br/>
+<input type="submit" value="select exchange" />
+
+<br/><br/><br/>
+<a href="{% url 'balance_manager:index' %}">< index<a/>

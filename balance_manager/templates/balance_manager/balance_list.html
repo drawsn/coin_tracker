@@ -1,0 +1,14 @@
+<h1>your balances</h1>
+
+{% if balance_list %}
+    <ul>
+    {% for balance in balance_list %}
+        <li>{{ balance.amount }} {{ balance.currency }} = fiat value: {{ balance.fiat_value }}</li>
+    {% endfor %}
+    </ul>
+    sum: {{ fiat_sum }}
+{% else %}
+    <p>there are no balances available.</p>
+{% endif %}
+<br/><br/><br/>
+<a href="{% url 'balance_manager:index' %}">< index<a/>

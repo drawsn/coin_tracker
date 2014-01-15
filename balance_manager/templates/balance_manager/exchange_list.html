@@ -1,0 +1,13 @@
+<h1>supported exchanges</h1>
+
+{% if exchange_list %}
+    <ul>
+    {% for exchange in exchange_list %}
+        <li><a href="{% url 'balance_manager:detail' exchange.exchange_id %}">{{ exchange.exchange_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No exchanges are available.</p>
+{% endif %}
+<br/>
+<a href="{% url 'balance_manager:index' %}">< index<a/>

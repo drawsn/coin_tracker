@@ -1,0 +1,17 @@
+<h1>select fiat currency</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+currently used currency: {{ used_currency }}
+<br/><br/>
+<form action="{% url 'balance_manager:select_fiat' %}" method="post">
+{% csrf_token %}
+{% for currency in currency_list %}
+    <input type="radio" name="currency" id="currency{{ forloop.counter }}" value="{{ currency.id }}" />
+    <label for="currency{{ forloop.counter }}">{{ currency.currency_name }}</label><br />
+{% endfor %}
+<br/>
+<input type="submit" value="select currency" />
+
+<br/><br/><br/>
+<a href="{% url 'balance_manager:index' %}">< index<a/>

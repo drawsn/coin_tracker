@@ -1,0 +1,13 @@
+<h1>{{ exchange.exchange_name }}</h1>
+exchange type: {{ exchange.get_exchange_type_display }}
+<br/><br/>
+supported pairs:
+<br/>
+<ul>
+{% for api in exchange.api_set.all %}
+    <li>{{ api.pair }} - {{ api.api_url }}</li>
+{% endfor %}
+</ul>
+
+<br/>
+<a href="{% url 'balance_manager:index' %}">< index<a/>
