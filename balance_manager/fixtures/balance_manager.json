@@ -1,0 +1,274 @@
+[
+{
+    "pk": 1,
+    "model": "balance_manager.exchange",
+    "fields": {
+        "exchange_type": "FC",
+        "exchange_name": "bitstamp.net"
+    }
+},
+{
+    "pk": 2,
+    "model": "balance_manager.exchange",
+    "fields": {
+        "exchange_type": "CC",
+        "exchange_name": "bter.com"
+    }
+},
+{
+    "pk": 3,
+    "model": "balance_manager.exchange",
+    "fields": {
+        "exchange_type": "FC",
+        "exchange_name": "mtgox.com"
+    }
+},
+{
+    "pk": 4,
+    "model": "balance_manager.exchange",
+    "fields": {
+        "exchange_type": "CC",
+        "exchange_name": "cryptsy.com"
+    }
+},
+{
+    "pk": 1,
+    "model": "balance_manager.currency_pair",
+    "fields": {
+        "pair_name": "BTC/USD",
+        "currency_from": 3,
+        "currency_to": 2
+    }
+},
+{
+    "pk": 2,
+    "model": "balance_manager.currency_pair",
+    "fields": {
+        "pair_name": "DTC/BTC",
+        "currency_from": 4,
+        "currency_to": 3
+    }
+},
+{
+    "pk": 3,
+    "model": "balance_manager.currency_pair",
+    "fields": {
+        "pair_name": "QRK/BTC",
+        "currency_from": 5,
+        "currency_to": 3
+    }
+},
+{
+    "pk": 4,
+    "model": "balance_manager.currency_pair",
+    "fields": {
+        "pair_name": "XPM/BTC",
+        "currency_from": 6,
+        "currency_to": 3
+    }
+},
+{
+    "pk": 5,
+    "model": "balance_manager.currency_pair",
+    "fields": {
+        "pair_name": "PTS/BTC",
+        "currency_from": 7,
+        "currency_to": 3
+    }
+},
+{
+    "pk": 3,
+    "model": "balance_manager.api",
+    "fields": {
+        "exchange": 1,
+        "api_url": "https://www.bitstamp.net/api/ticker/",
+        "pair": 1
+    }
+},
+{
+    "pk": 4,
+    "model": "balance_manager.api",
+    "fields": {
+        "exchange": 2,
+        "api_url": "https://bter.com/api/1/ticker/dtc_btc",
+        "pair": 2
+    }
+},
+{
+    "pk": 5,
+    "model": "balance_manager.api",
+    "fields": {
+        "exchange": 2,
+        "api_url": "https://bter.com/api/1/ticker/qrk_btc",
+        "pair": 3
+    }
+},
+{
+    "pk": 6,
+    "model": "balance_manager.api",
+    "fields": {
+        "exchange": 3,
+        "api_url": "http://data.mtgox.com/api/2/BTCUSD/money/ticker_fast",
+        "pair": 1
+    }
+},
+{
+    "pk": 7,
+    "model": "balance_manager.api",
+    "fields": {
+        "exchange": 4,
+        "api_url": "http://pubapi.cryptsy.com/api.php?method=singlemarketdata&marketid=119",
+        "pair": 4
+    }
+},
+{
+    "pk": 8,
+    "model": "balance_manager.api",
+    "fields": {
+        "exchange": 2,
+        "api_url": "https://bter.com/api/1/ticker/xpm_btc",
+        "pair": 4
+    }
+},
+{
+    "pk": 1,
+    "model": "balance_manager.currency",
+    "fields": {
+        "currency_name": "EUR",
+        "exchanges": [
+            1
+        ],
+        "currency_type": "FC"
+    }
+},
+{
+    "pk": 2,
+    "model": "balance_manager.currency",
+    "fields": {
+        "currency_name": "USD",
+        "exchanges": [
+            3,
+            1
+        ],
+        "currency_type": "FC"
+    }
+},
+{
+    "pk": 3,
+    "model": "balance_manager.currency",
+    "fields": {
+        "currency_name": "BTC",
+        "exchanges": [
+            3,
+            1
+        ],
+        "currency_type": "CC"
+    }
+},
+{
+    "pk": 4,
+    "model": "balance_manager.currency",
+    "fields": {
+        "currency_name": "DTC",
+        "exchanges": [
+            4,
+            2
+        ],
+        "currency_type": "CC"
+    }
+},
+{
+    "pk": 5,
+    "model": "balance_manager.currency",
+    "fields": {
+        "currency_name": "QRK",
+        "exchanges": [
+            4,
+            2
+        ],
+        "currency_type": "CC"
+    }
+},
+{
+    "pk": 6,
+    "model": "balance_manager.currency",
+    "fields": {
+        "currency_name": "XPM",
+        "exchanges": [
+            4,
+            2
+        ],
+        "currency_type": "CC"
+    }
+},
+{
+    "pk": 7,
+    "model": "balance_manager.currency",
+    "fields": {
+        "currency_name": "PTS",
+        "exchanges": [
+            4,
+            2
+        ],
+        "currency_type": "CC"
+    }
+},
+{
+    "pk": 8,
+    "model": "balance_manager.balance",
+    "fields": {
+        "amount": "600.00000000",
+        "exchange": 2,
+        "currency": 4,
+        "btc_value": "0.19920000",
+        "fiat_value": "167.35788000",
+        "wallet_adress": "1234567890"
+    }
+},
+{
+    "pk": 9,
+    "model": "balance_manager.balance",
+    "fields": {
+        "amount": "200.00000000",
+        "exchange": 2,
+        "currency": 5,
+        "btc_value": "0.01660200",
+        "fiat_value": "13.94817030",
+        "wallet_adress": "1234567890"
+    }
+},
+{
+    "pk": 11,
+    "model": "balance_manager.balance",
+    "fields": {
+        "amount": "3.00000000",
+        "exchange": 1,
+        "currency": 3,
+        "btc_value": "3.00000000",
+        "fiat_value": "2520.45000000",
+        "wallet_adress": "16dgGRmR8gieBztbTLMZzmVz3cdBi1KLs8"
+    }
+},
+{
+    "pk": 12,
+    "model": "balance_manager.balance",
+    "fields": {
+        "amount": "200.00000000",
+        "exchange": 2,
+        "currency": 6,
+        "btc_value": "0.80148200",
+        "fiat_value": "675.72145938",
+        "wallet_adress": ""
+    }
+},
+{
+    "pk": 1,
+    "model": "balance_manager.userdata",
+    "fields": {
+        "crypto_currency": 3,
+        "fiat_exchange": 1,
+        "fiat_sum": "0E-8",
+        "fiat_currency": 2
+    }
+}
+]
