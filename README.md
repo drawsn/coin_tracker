@@ -28,9 +28,12 @@ $ source myapp/bin/activate
 ```
 
 Install dependencies with 'pip':
+```
  - [Requests](http://docs.python-requests.org/en/latest/)
+ - apt-get install libpq-dev
  - json
  - psycopg2
+```
  
 Install latest Django version:
 ```
